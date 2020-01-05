@@ -1,5 +1,48 @@
+header{
+    text-align: center;
+}
 .container{
     display: grid;
-    grid-template-columns: repeat(16, 1fr);
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     grid-gap: 12px;
+    /* justify-content: stretch; */
+}
+form{
+    grid-row: 5;
+    display: flex;
+    justify-content: space-around;
+    grid-column: 3 / span 3;
+}
+#today{
+    grid-row: 20;
+    grid-column: 4;
+    justify-self: center;
+    font-weight: bold;
+}
+#tomorrow{
+    grid-row: 45;
+    grid-column: 4;
+    justify-self: center;
+    font-weight: bold;
+}
+#todayPic{
+    background-color: lightgreen;
+    grid-row: 10 / span 20;
+    grid-column: 2 / span 2;
+}
+#todayText{
+    background-color: green;
+    grid-row: 10 / span 20;
+    grid-column: 5 / span 2;
+}
+#tomorrowPic{
+    background-color: lightblue;
+    grid-row: 35 / span 20;
+    grid-column: 2 / span 2;
+}
+#tomorrowText{
+    background-color: blue;
+    grid-row: 35 / span 20;
+    grid-column: 5 / span 2;
 }

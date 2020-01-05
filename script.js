@@ -32,5 +32,19 @@ window.addEventListener('load', () => {
         // console.log(responseData)
         let weatherArray = responseData.Days;
         console.log(weatherArray);
-    })
+        modifiedArray(weatherArray)
+    });
+    function modifiedArray(weatherArray){ //* Väljer ut idag och imorrgon i arrayen. Lägger det i en ny array. (modifiedArray)
+        let modifiedArray = [];
+        for ( let i=0; i < 2; i++){
+            modifiedArray.push(weatherArray[i]);
+        }
+        console.log(modifiedArray)
+        showResults(modifiedArray)
+    }
+    function showResults(modifiedArray){
+        
+    }
+
+
 })
