@@ -39,6 +39,7 @@ window.addEventListener('load', () => {
 				navigator.geolocation.getCurrentPosition(gotPosition, positionFail, options);
 			}else{
 				//? Om en gammal webbläsare inte stödjer Geolocation
+				console.log('something went wrong!')
 			}
 		}
 		function gotPosition(position){
