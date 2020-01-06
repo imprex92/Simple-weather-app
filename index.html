@@ -6,7 +6,10 @@
         rel="icon" type="image/x-icon" />
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <script src="/script.js"></script>
+	<script src="/script.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+		crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/f79d55bca4.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Weather App</title>
@@ -20,7 +23,12 @@
         <div class="container"> <!-- Innehåll i grid -->
             <form action="" method="post">
                Skriv Postnummer: <input id="postalNo" type="text" size="5" maxlength="5" minlength="5" min="10004" max="98423" data-stripe="number" placeholder="41101"><br>
-               <button id="postalBtn" form="postalNo" type="submit">Hur är vädret?</button>
+			   <button id="postalBtn" form="postalNo" type="submit">
+				   Hur är vädret?
+				</button>
+			   <button id="geolocation" type="submit">
+				   <i class="fas fa-location-arrow"></i>
+				</button>
             </form>
             <section id="today">
                 Dagens Väderlek

@@ -3,9 +3,76 @@
 //! API Base Adress: http://api.weatherunlocked.com/
 //! API Structure: api/forecast/se.### ##?lang=sv&app_id=42107755&app_key=255b6d3420f660f99b960ee55721155d
 
-
+//! API Key: AIzaSyAi4SFgEwyx-Xl6BvDSH5fSL7z4wwU2fWs
+//! API Structure: https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyAi4SFgEwyx-Xl6BvDSH5fSL7z4wwU2fWs
 
 window.addEventListener('load', () => {
+//! GeoLocation Area Start
+// //? INFO: Using Google Cloud Platform, Geolocation API
+// 	let locationKey = 'AIzaSyAi4SFgEwyx-Xl6BvDSH5fSL7z4wwU2fWs';
+// 	let locationURL = 'https://www.googleapis.com/geolocation/v1/geolocate?key=';
+// 	let editedLocationURL = locationURL + locationKey;
+
+// 	let geolocationBtn = document.querySelector('#geolocation');
+// 	geolocationBtn.addEventListener('click', async event => {
+
+// 	})
+
+
+
+
+	let geolocation = document.querySelector('#geolocation')
+	geolocation.addEventListener('click', event => {
+		let G, options;
+
+		document.addEventListener('DOMContentLoaded', init);
+
+		function init(){
+			if(navigator.geolocation){ //! Options (giveUp, tooOld) sätts i millisekunder
+				let giveUp = 1000 * 30; //* 30 sekunder
+				let tooOld = 1000 * 60 * 60; //* 1 timma
+				options ={
+					enableHighAccuracy: true,
+					timeout: giveUp,
+					maximumAge: tooOld
+				}
+				navigator.geolocation.getCurrentPosition(gotPosition, positionFail, options);
+			}else{
+				//? Om en gammal webbläsare inte stödjer Geolocation
+			}
+		}
+		function gotPosition(position){
+			console.log(position)
+			//*	position.coords.latitude;
+			//* position.coords.longitude;
+			//* position.coords.accuracy;
+			//* position.timestamp;
+		}
+		function positionFail(err){
+			//! Går något fel får vi tillbaka en siffra (err)
+			let errors = {
+				1: 'Du gav mig inte tillåtelse att leta upp dig',
+				2: 'Jag är inte riktigt säker på vart  du håller hus',
+				3: 'Det tog för lång tid, du har en skitdator'
+			}
+			// document.querySelector('h1').textContent = errors[err];
+		}
+
+
+	})
+
+
+
+
+
+
+
+
+
+
+
+
+//! GeoLocation Area End
 
 //! Input Area Start
     // document.querySelector('input').oninput = function () {
@@ -18,6 +85,8 @@ window.addEventListener('load', () => {
     
 
 //! Input Area End
+
+//! PostalWeather Area Start
     const sendBtn = document.querySelector('#postalBtn')
     sendBtn.addEventListener('click', async e => {
         const baseURL = 'http://api.weatherunlocked.com/api/forecast/se.';
@@ -42,7 +111,9 @@ window.addEventListener('load', () => {
 		console.log(modifiedArray)
 		console.log(modifiedArray[0].Timeframes[0].wx_code) //? hitta väder-kod
         showResults(modifiedArray, postalCode)
-    }
+	}
+	//! PostalWeather Area End
+
     function showResults(modifiedArray, postalCode){
 		//! Dagens Start
 		let dateAndPostal1 = document.createElement('span');		

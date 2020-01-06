@@ -5,6 +5,7 @@ header{
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(2, 1fr);
+    /* grid-template-columns: minmax(0, 1fr); What could this do? */
     grid-gap: 12px;
     /* justify-content: stretch; */
 }
@@ -46,6 +47,6 @@ form{
     grid-row: 35 / span 20;
     grid-column: 5 / span 2;
 }
-.dateAndPostalMessage{
+.dateAndPostalMessage {
 
 }
