@@ -32,19 +32,37 @@ window.addEventListener('load', () => {
         // console.log(responseData)
         let weatherArray = responseData.Days;
         console.log(weatherArray);
-        modifiedArray(weatherArray)
+        modifiedArray(weatherArray, postalCode)
     });
-    function modifiedArray(weatherArray){ //* Väljer ut idag och imorrgon i arrayen. Lägger det i en ny array. (modifiedArray)
+    function modifiedArray(weatherArray, postalCode){ //* Väljer ut idag och imorrgon i arrayen. Lägger det i en ny array. (modifiedArray)
         let modifiedArray = [];
         for ( let i=0; i < 2; i++){
             modifiedArray.push(weatherArray[i]);
         }
-        console.log(modifiedArray)
-        showResults(modifiedArray)
+		console.log(modifiedArray)
+		console.log(modifiedArray[0].Timeframes[0].wx_code) //? hitta väder-kod
+        showResults(modifiedArray, postalCode)
     }
-    function showResults(modifiedArray){
-        
-    }
+    function showResults(modifiedArray, postalCode){
+		//! Dagens Start
+		let dateAndPostal1 = document.createElement('span');		
+		dateAndPostal1.className = 'dateAndPostalMessage';
+		dateAndPostal1.innerText = 'Dagens datum ' + (modifiedArray[0].date) + '\n Postnummer: ' + postalCode;
+		document.getElementById('todayText').appendChild(dateAndPostal1);
+		//! Dagens Slut
 
+		//! Morgondagens Start
+		let dateAndPostal2 = document.createElement('span');
+		dateAndPostal2.className = 'dateAndPostalMessage';
+		dateAndPostal2.innerText = 'Morgondagens datum ' + (modifiedArray[1].date) + '\n Postnummer: ' + (postalCode);
+		document.getElementById('tomorrowText').appendChild(dateAndPostal2);
+		//! Morgondagens Slut
+		showResultsImg(modifiedArray, postalCode)
+    }
+	function showResultsImg(modifiedArray, postalCode) {
+		if (modifiedArray[0].Timeframes[0].wx_code == 0){
+			
+		}
+	};
 
 })
