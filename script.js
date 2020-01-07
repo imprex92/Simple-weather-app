@@ -59,7 +59,7 @@ window.addEventListener('load', () => {
 		//! Morgondagens Slut
 		showResultsImg(modifiedArray, postalCode)
     }
-	function showResultsImg(modifiedArray, postalCode) {
+	function showResultsImg(modifiedArray, postalCode){
 		let wx_code = modifiedArray[0].Timeframes[3].wx_code;
 		//! Today Pictures Start
 		if (wx_code == 0){
@@ -68,6 +68,7 @@ window.addEventListener('load', () => {
 			weatherImg.setAttribute('alt', 'Sunny weather');
 			document.getElementById('todayPic').appendChild(weatherImg);
 			showResultsTomorrowImg(modifiedArray)
+			umbrellaOrNot(wx_code)
 		}
 		if ((wx_code == 45 || wx_code == 49) || (wx_code == 10)) {
 			let weatherImg = document.createElement('img');
@@ -75,6 +76,7 @@ window.addEventListener('load', () => {
 			weatherImg.setAttribute('alt', 'Foggy weather');
 			document.getElementById('todayPic').appendChild(weatherImg);
 			showResultsTomorrowImg(modifiedArray)
+			umbrellaOrNot(wx_code)
 		}
 		if (wx_code >= 1 && wx_code <= 3) {
 			let weatherImg = document.createElement('img');
@@ -82,6 +84,7 @@ window.addEventListener('load', () => {
 			weatherImg.setAttribute('alt', 'Cloudy weather');
 			document.getElementById('todayPic').appendChild(weatherImg);
 			showResultsTomorrowImg(modifiedArray)
+			umbrellaOrNot(wx_code)
 		}
 		if ((wx_code >= 21 && wx_code <= 56) || (wx_code == 60 || wx_code == 61) || (wx_code == 66 || wx_code == 68) || (wx_code == 80 || wx_code == 83)) {
 			let weatherImg = document.createElement('img');
@@ -89,6 +92,7 @@ window.addEventListener('load', () => {
 			weatherImg.setAttribute('alt', 'Light Rainy weather');
 			document.getElementById('todayPic').appendChild(weatherImg);
 			showResultsTomorrowImg(modifiedArray)
+			umbrellaOrNot(wx_code)
 		}
 		if((wx_code == 62 || wx_code == 63) || (wx_code == 67 || wx_code == 69)){
 			let weatherImg = document.createElement('img');
@@ -96,6 +100,7 @@ window.addEventListener('load', () => {
 			weatherImg.setAttribute('alt', 'Moderat Rainy weather');
 			document.getElementById('todayPic').appendChild(weatherImg);
 			showResultsTomorrowImg(modifiedArray)
+			umbrellaOrNot(wx_code)
 		}
 		if((wx_code == 57 || wx_code == 64) || (wx_code == 65 || wx_code == 82) || (wx_code == 84)){
 			let weatherImg = document.createElement('img');
@@ -103,6 +108,7 @@ window.addEventListener('load', () => {
 			weatherImg.setAttribute('alt', 'Heavy Rainy weather');
 			document.getElementById('todayPic').appendChild(weatherImg);
 			showResultsTomorrowImg(modifiedArray)
+			umbrellaOrNot(wx_code)
 		}
 		if((wx_code == 38 || wx_code == 39) || (wx_code == 70 || wx_code == 71) || (wx_code == 85)){
 			let weatherImg = document.createElement('img');
@@ -110,6 +116,7 @@ window.addEventListener('load', () => {
 			weatherImg.setAttribute('alt', 'Light Snowy weather');
 			document.getElementById('todayPic').appendChild(weatherImg);
 			showResultsTomorrowImg(modifiedArray)
+			umbrellaOrNot(wx_code)
 		}
 		if((wx_code == 72 || wx_code == 73) || (wx_code == 86)){
 			let weatherImg = document.createElement('img');
@@ -117,6 +124,7 @@ window.addEventListener('load', () => {
 			weatherImg.setAttribute('alt', 'Moderat Snowy weather');
 			document.getElementById('todayPic').appendChild(weatherImg);
 			showResultsTomorrowImg(modifiedArray)
+			umbrellaOrNot(wx_code)
 		}
 		if(wx_code == 74 || wx_code == 75){
 			let weatherImg = document.createElement('img');
@@ -124,6 +132,7 @@ window.addEventListener('load', () => {
 			weatherImg.setAttribute('alt', 'Heavy Snowy weather');
 			document.getElementById('todayPic').appendChild(weatherImg);
 			showResultsTomorrowImg(modifiedArray)
+			umbrellaOrNot(wx_code)
 		}
 		if(wx_code == 87){
 			let weatherImg = document.createElement('img');
@@ -131,6 +140,7 @@ window.addEventListener('load', () => {
 			weatherImg.setAttribute('alt', 'Light Haily weather');
 			document.getElementById('todayPic').appendChild(weatherImg);
 			showResultsTomorrowImg(modifiedArray)
+			umbrellaOrNot(wx_code)
 		}
 		if(wx_code == 79 || wx_code == 88){
 			let weatherImg = document.createElement('img');
@@ -138,6 +148,7 @@ window.addEventListener('load', () => {
 			weatherImg.setAttribute('alt', 'Moderat Haily weather');
 			document.getElementById('todayPic').appendChild(weatherImg);
 			showResultsTomorrowImg(modifiedArray)
+			umbrellaOrNot(wx_code)
 		}
 		if(wx_code == 29){
 			let weatherImg = document.createElement('img');
@@ -145,6 +156,7 @@ window.addEventListener('load', () => {
 			weatherImg.setAttribute('alt', 'Thunder weather');
 			document.getElementById('todayPic').appendChild(weatherImg);
 			showResultsTomorrowImg(modifiedArray)
+			umbrellaOrNot(wx_code)
 		}
 		if(wx_code == 91 || wx_code == 93){
 			let weatherImg = document.createElement('img');
@@ -152,6 +164,7 @@ window.addEventListener('load', () => {
 			weatherImg.setAttribute('alt', 'Light Thunder weather');
 			document.getElementById('todayPic').appendChild(weatherImg);
 			showResultsTomorrowImg(modifiedArray)
+			umbrellaOrNot(wx_code)
 		}
 		if (wx_code == 92) {
 			let weatherImg = document.createElement('img');
@@ -159,6 +172,7 @@ window.addEventListener('load', () => {
 			weatherImg.setAttribute('alt', 'Moderat Thunder weather');
 			document.getElementById('todayPic').appendChild(weatherImg);
 			showResultsTomorrowImg(modifiedArray)
+			umbrellaOrNot(wx_code)
 		}
 		if (wx_code == 94) {
 			let weatherImg = document.createElement('img');
@@ -166,6 +180,7 @@ window.addEventListener('load', () => {
 			weatherImg.setAttribute('alt', 'Heavy Thunder weather');
 			document.getElementById('todayPic').appendChild(weatherImg);
 			showResultsTomorrowImg(modifiedArray)
+			umbrellaOrNot(wx_code)
 		}
 		//! Today Pictures End
 	};	
@@ -177,91 +192,130 @@ window.addEventListener('load', () => {
 			weatherImg.setAttribute('src', 'https://media.giphy.com/media/lPtKdQ6JMO06Y/giphy.gif');
 			weatherImg.setAttribute('alt', 'Sunny weather');
 			document.getElementById('tomorrowPic').appendChild(weatherImg);
+			umbrellaOrNot(wx_code1)
 		}
 		if ((wx_code1 == 45 || wx_code1 == 49) || (wx_code1 == 10)) {
 			let weatherImg = document.createElement('img');
 			weatherImg.setAttribute('src', 'https://media.giphy.com/media/26xBwlGgyeQjxx09G/giphy.gif');
 			weatherImg.setAttribute('alt', 'Foggy weather');
 			document.getElementById('tomorrowPic').appendChild(weatherImg);
+			umbrellaOrNot(wx_code1);
 		}
 		if (wx_code1 >= 1 && wx_code1 <= 3) {
 			let weatherImg = document.createElement('img');
 			weatherImg.setAttribute('src', 'https://media.giphy.com/media/3oz8xrJFAzgwfB0h5m/giphy.gif');
 			weatherImg.setAttribute('alt', 'Cloudy weather');
 			document.getElementById('tomorrowPic').appendChild(weatherImg);
+			umbrellaOrNot(wx_code1);
 		}
 		if ((wx_code1 >= 21 && wx_code1 <= 56) || (wx_code1 == 60 || wx_code1 == 61) || (wx_code1 == 66 || wx_code1 == 68) || (wx_code1 == 80 || wx_code1 == 83)) {
 			let weatherImg = document.createElement('img');
 			weatherImg.setAttribute('src', 'https://media.giphy.com/media/CFWNpx0LDRiSY/giphy.gif');
 			weatherImg.setAttribute('alt', 'Light Rainy weather');
 			document.getElementById('tomorrowPic').appendChild(weatherImg);
+			umbrellaOrNot(wx_code1);
 		}
 		if ((wx_code1 == 62 || wx_code1 == 63) || (wx_code1 == 67 || wx_code1 == 69)) {
 			let weatherImg = document.createElement('img');
 			weatherImg.setAttribute('src', 'https://media.giphy.com/media/BmQPKjwhScjdK/giphy.gif');
 			weatherImg.setAttribute('alt', 'Moderat Rainy weather');
 			document.getElementById('tomorrowPic').appendChild(weatherImg);
+			umbrellaOrNot(wx_code1);
 		}
 		if ((wx_code1 == 57 || wx_code1 == 64) || (wx_code1 == 65 || wx_code1 == 82) || (wx_code1 == 84)) {
 			let weatherImg = document.createElement('img');
 			weatherImg.setAttribute('src', 'https://media.giphy.com/media/4Wk3vMYcipa0/giphy.gif');
 			weatherImg.setAttribute('alt', 'Heavy Rainy weather');
 			document.getElementById('tomorrowPic').appendChild(weatherImg);
+			umbrellaOrNot(wx_code1);
 		}
 		if ((wx_code1 == 38 || wx_code1 == 39) || (wx_code1 == 70 || wx_code1 == 71) || (wx_code1 == 85)) {
 			let weatherImg = document.createElement('img');
 			weatherImg.setAttribute('src', 'https://media.giphy.com/media/6sqaUJgoc5JWE/giphy.gif');
 			weatherImg.setAttribute('alt', 'Light Snowy weather');
 			document.getElementById('tomorrowPic').appendChild(weatherImg);
+			umbrellaOrNot(wx_code1);
 		}
 		if ((wx_code1 == 72 || wx_code1 == 73) || (wx_code1 == 86)) {
 			let weatherImg = document.createElement('img');
 			weatherImg.setAttribute('src', 'https://media.giphy.com/media/7Bgpw7PwdxoDC/giphy.gif');
 			weatherImg.setAttribute('alt', 'Moderat Snowy weather');
 			document.getElementById('tomorrowPic').appendChild(weatherImg);
+			umbrellaOrNot(wx_code1);
 		}
 		if (wx_code1 == 74 || wx_code1 == 75) {
 			let weatherImg = document.createElement('img');
 			weatherImg.setAttribute('src', 'https://media.giphy.com/media/l0MYHlfBw17B06vp6/giphy.gif');
 			weatherImg.setAttribute('alt', 'Heavy Snowy weather');
 			document.getElementById('tomorrowPic').appendChild(weatherImg);
+			umbrellaOrNot(wx_code1);
 		}
 		if (wx_code1 == 87) {
 			let weatherImg = document.createElement('img');
 			weatherImg.setAttribute('src', 'https://media.giphy.com/media/xTiTnGmU99wLFvZBfy/giphy.gif');
 			weatherImg.setAttribute('alt', 'Light Haily weather');
 			document.getElementById('tomorrowPic').appendChild(weatherImg);
+			umbrellaOrNot(wx_code1);
 		}
 		if (wx_code1 == 79 || wx_code1 == 88) {
 			let weatherImg = document.createElement('img');
 			weatherImg.setAttribute('src', 'https://media.giphy.com/media/YMPVlSoVQDJGU/giphy.gif');
 			weatherImg.setAttribute('alt', 'Moderat Haily weather');
 			document.getElementById('tomorrowPic').appendChild(weatherImg);
+			umbrellaOrNot(wx_code1);
 		}
 		if (wx_code1 == 29) {
 			let weatherImg = document.createElement('img');
 			weatherImg.setAttribute('src', 'https://media.giphy.com/media/FZzbTJyRTwPuw/giphy.gif');
 			weatherImg.setAttribute('alt', 'Thunder weather');
 			document.getElementById('tomorrowPic').appendChild(weatherImg);
+			umbrellaOrNot(wx_code1);
 		}
 		if (wx_code1 == 91 || wx_code1 == 93) {
 			let weatherImg = document.createElement('img');
 			weatherImg.setAttribute('src', 'https://media.giphy.com/media/iLdNyukd3uxsk/giphy.gif');
 			weatherImg.setAttribute('alt', 'Light Thunder weather');
 			document.getElementById('tomorrowPic').appendChild(weatherImg);
+			umbrellaOrNot(wx_code1);
 		}
 		if (wx_code1 == 92) {
 			let weatherImg = document.createElement('img');
 			weatherImg.setAttribute('src', 'https://media.giphy.com/media/EVf8tbnlr77Es/giphy.gif');
 			weatherImg.setAttribute('alt', 'Moderat Thunder weather');
 			document.getElementById('tomorrowPic').appendChild(weatherImg);
+			umbrellaOrNot(wx_code1);
 		}
 		if (wx_code1 == 94) {
 			let weatherImg = document.createElement('img');
 			weatherImg.setAttribute('src', 'https://media.giphy.com/media/VnaDpKoxNnHBC/giphy.gif');
 			weatherImg.setAttribute('alt', 'Heavy Thunder weather');
 			document.getElementById('tomorrowPic').appendChild(weatherImg);
+			umbrellaOrNot(wx_code1);
 		}
 		//! Tomorrow Pictures End
+	};
+
+	//TODO wx_code1 fattas. Behövs för att visa paraply på morgondagen!
+	function umbrellaOrNot(wx_code, wx_code1) {
+		if ((wx_code >= 0 && wx_code <= 10) || (wx_code == 45 || wx_code == 49)){
+			let umbrellaImg = document.createElement('img');
+			umbrellaImg.setAttribute('src', '/Resources/No_umbrella.png');
+			umbrellaImg.setAttribute('alt', 'No Umbrella');
+			umbrellaImg.className('umbrellaImg');
+			document.getElementById('todayText').appendChild(umbrellaImg)
+		}
+		if (wx_code == 38){
+			let umbrellaImg = document.createElement('img');
+			umbrellaImg.setAttribute('src', '/Resources/umbrella_storm.png');
+			umbrellaImg.setAttribute('alt', 'Storm No Umbrella');
+			umbrellaImg.className('umbrellaImg');
+			document.getElementById('todayText').appendChild(umbrellaImg)
+		}else{
+			let umbrellaImg = document.createElement('img');
+			umbrellaImg.setAttribute('src', '/Resources/umbrella.png');
+			umbrellaImg.setAttribute('alt', 'Yes Umbrella');
+			umbrellaImg.className('umbrellaImg');
+			document.getElementById('todayText').appendChild(umbrellaImg)
+		}
 	};
 })
