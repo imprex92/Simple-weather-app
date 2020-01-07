@@ -119,6 +119,9 @@ form{
 		grid-row: 10 / span 8;
 		grid-column: 1 / span 8;
 	}
-
+	.umbrellaImg {
+		width: 80px;
+		height: 80px;
+	}
 	
 }
