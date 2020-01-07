@@ -47,10 +47,78 @@ form{
     grid-row: 35 / span 20;
     grid-column: 5 / span 2;
 }
-.dateAndPostalMessage {
 
-}
 
 @media screen and (max-device-width: 640px) {
+	h3{
+		margin-block-start: 0em;
+	}
+	.logo{
+		height: 80px;
+		width: 80px;
+	}
+	.container {
+		display: grid;
+		grid-template-columns: repeat(8, 1fr);
+		grid-template-rows: repeat(22, 1fr);
+		grid-column-gap: 0px;
+		grid-row-gap: 0px;
+	}
+	
+	form {
+		
+		grid-row: 1;
+		/* display: flex; */
+		/* justify-content: space-around; */
+		grid-column: 3 / span 4;
+		
+	}
+	/* Hidden */
+	#today {
+		display: none;
+		grid-row: 20;
+		grid-column: 4;
+		justify-self: center;
+		font-weight: bold;
+		
+	}
+
+	#tomorrow {
+		display: none;
+		grid-row: 45;
+		grid-column: 4;
+		justify-self: center;
+		font-weight: bold;
+		
+	}
+	#tomorrowPic {
+		display: none;
+		background-color: lightblue;
+		grid-row: 35 / span 20;
+		grid-column: 2 / span 2;
+	}
+
+	#tomorrowText {
+		display: none;
+		background-color: blue;
+		grid-row: 35 / span 20;
+		grid-column: 5 / span 2;
+	}
+	/* Hidden */
+	#todayPic {
+		background-color: lightgreen;
+		grid-row: 2 / span 8;
+		grid-column: 1 / span 8;
+	}
+	.weatherImg{
+		width: 398px;
+		height: 176px;
+	}
+	#todayText {
+		background-color: green;
+		grid-row: 10 / span 8;
+		grid-column: 1 / span 8;
+	}
+
 	
 }
