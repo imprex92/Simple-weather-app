@@ -399,22 +399,36 @@ window.addEventListener('load', () => {
 
 	//TODO wx_code1 fattas. Behövs för att visa paraply på morgondagen!
 	function umbrellaOrNot(wx_code, wx_code1) {
-		if ((wx_code >= 0 && wx_code <= 10) || (wx_code == 45 || wx_code == 49)){
+		if ((wx_code >= 0 && wx_code <= 10) || (wx_code == 45 || wx_code == 49)) {
 			let umbrellaImg = document.createElement('img');
-			umbrellaImg.setAttribute('src', '/Resources/No_umbrella.png');
+			umbrellaImg.setAttribute('src', '/Resources/icons8-clouds-100.png');
+			umbrellaImg.setAttribute('alt', 'No Umbrella');
+			umbrellaImg.className = 'umbrellaImg';
+			document.getElementById('todayText').appendChild(umbrellaImg)
+		}
+		if ((wx_code >= 1 && wx_code <= 3) || (wx_code == 10)) {
+			let umbrellaImg = document.createElement('img');
+			umbrellaImg.setAttribute('src', '/Resources/icons8-fog-machine-100.png');
+			umbrellaImg.setAttribute('alt', 'Fogy No Umbrella');
+			umbrellaImg.className = 'umbrellaImg';
+			document.getElementById('todayText').appendChild(umbrellaImg)
+		}
+		if ((wx_code == 0)){
+			let umbrellaImg = document.createElement('img');
+			umbrellaImg.setAttribute('src', '/Resources/icons8-sun-smiling-100.png');
 			umbrellaImg.setAttribute('alt', 'No Umbrella');
 			umbrellaImg.className = 'umbrellaImg';
 			document.getElementById('todayText').appendChild(umbrellaImg)
 		}
 		if (wx_code == 38){
 			let umbrellaImg = document.createElement('img');
-			umbrellaImg.setAttribute('src', '/Resources/umbrella_storm.png');
+			umbrellaImg.setAttribute('src', '/Resources/icons8-windy-weather-100.png');
 			umbrellaImg.setAttribute('alt', 'Storm No Umbrella');
 			umbrellaImg.className = 'umbrellaImg';
 			document.getElementById('todayText').appendChild(umbrellaImg)
 		}else{
 			let umbrellaImg = document.createElement('img');
-			umbrellaImg.setAttribute('src', '/Resources/umbrella.png');
+			umbrellaImg.setAttribute('src', '/Resources/icons8-rain-100.png');
 			umbrellaImg.setAttribute('alt', 'Yes Umbrella');
 			umbrellaImg.className = 'umbrellaImg';
 			document.getElementById('todayText').appendChild(umbrellaImg)
