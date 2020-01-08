@@ -76,13 +76,13 @@ form {
 	body {
 		background: linear-gradient(180deg, #78B9EB 17.72%, rgba(27, 97, 151, 0) 135.55%);
 	}
-
-	footer {
+	.footer {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		padding: 1em;
+		height: 50px;
 	}
 
 	h3 {
@@ -182,6 +182,11 @@ form {
 	.umbrellaImg {
 		width: 150px;
 		height: 150px;
+	}
+	.dropDown{
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
 	}
 
 }

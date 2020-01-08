@@ -3,13 +3,12 @@
 //! API Base Adress: http://api.weatherunlocked.com/
 //! API Structure: api/forecast/se.### ##?lang=sv&app_id=42107755&app_key=255b6d3420f660f99b960ee55721155d
 
-//! API Key: AIzaSyAi4SFgEwyx-Xl6BvDSH5fSL7z4wwU2fWs
-//! API Structure: https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyAi4SFgEwyx-Xl6BvDSH5fSL7z4wwU2fWs
+
 
 window.addEventListener('load', () => {
 //! GeoLocation Area Start
 // //? INFO: Using Google Cloud Platform, Geolocation API
-// 	let locationKey = 'AIzaSyAi4SFgEwyx-Xl6BvDSH5fSL7z4wwU2fWs';
+// 	let locationKey = '??????????????????????????';
 // 	let locationURL = 'https://www.googleapis.com/geolocation/v1/geolocate?key=';
 // 	let editedLocationURL = locationURL + locationKey;
 
@@ -94,7 +93,13 @@ window.addEventListener('load', () => {
         const apiSettingKey = '?lang=sv&app_id=42107755&app_key=255b6d3420f660f99b960ee55721155d';
         const postalInput = document.querySelector('#postalNo');
         let postalCode = postalInput.value;
-        // console.log(postalInput.value)
+		// console.log(postalInput.value)
+		//! Postnummer validering Start
+		if (postalCode == '' || postalCode == null) {
+			alert("Du måste skriva in ett postnummer!");
+		} else if (isNaN(postalCode)){
+			alert('Bara siffror i postnummret är accepterat!')
+		}else{
         console.log(postalCode)
         const editedURL = baseURL + postalCode + apiSettingKey;
         let weatherResponse = await fetch(editedURL);
@@ -102,8 +107,10 @@ window.addEventListener('load', () => {
         // console.log(responseData)
         let weatherArray = responseData.Days;
         console.log(weatherArray);
-        modifiedArray(weatherArray, postalCode)
-    });
+		modifiedArray(weatherArray, postalCode)	
+		}
+		//! Postnummer validering End
+});
     function modifiedArray(weatherArray, postalCode){ //* Väljer ut idag och imorrgon i arrayen. Lägger det i en ny array. (modifiedArray)
         let modifiedArray = [];
         for ( let i=0; i < 2; i++){
