@@ -403,20 +403,20 @@ window.addEventListener('load', () => {
 			let umbrellaImg = document.createElement('img');
 			umbrellaImg.setAttribute('src', '/Resources/No_umbrella.png');
 			umbrellaImg.setAttribute('alt', 'No Umbrella');
-			umbrellaImg.className('umbrellaImg');
+			umbrellaImg.className = 'umbrellaImg';
 			document.getElementById('todayText').appendChild(umbrellaImg)
 		}
 		if (wx_code == 38){
 			let umbrellaImg = document.createElement('img');
 			umbrellaImg.setAttribute('src', '/Resources/umbrella_storm.png');
 			umbrellaImg.setAttribute('alt', 'Storm No Umbrella');
-			umbrellaImg.className('umbrellaImg');
+			umbrellaImg.className = 'umbrellaImg';
 			document.getElementById('todayText').appendChild(umbrellaImg)
 		}else{
 			let umbrellaImg = document.createElement('img');
 			umbrellaImg.setAttribute('src', '/Resources/umbrella.png');
 			umbrellaImg.setAttribute('alt', 'Yes Umbrella');
-			umbrellaImg.className('umbrellaImg');
+			umbrellaImg.className = 'umbrellaImg';
 			document.getElementById('todayText').appendChild(umbrellaImg)
 		}
 	};
