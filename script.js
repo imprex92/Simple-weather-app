@@ -74,6 +74,31 @@ window.addEventListener('load', () => {
 
 //! GeoLocation Area End
 
+//! Info DropDown start
+    let infoBtn = document.querySelector("#infoBtn");
+    let infoContainer = document.querySelector("#infoContainer");
+
+    infoBtn.addEventListener("click", event => {
+
+    	if (!infoContainer.style.display)
+    		infoContainer.style.display = "none";
+    	console.log("button funkar");
+
+    	if (infoContainer.style.display !== "none") {
+    		console.log("i if sats")
+    		infoContainer.style.display = "none";
+
+    	} else {
+    		console.log("i else sats")
+    		infoContainer.style.display = "block";
+    	}
+
+
+    });
+//! Info DropDown End
+
+
+
 //! Input Area Start
     // document.querySelector('input').oninput = function () {
     //     var foo = this.value.split(" ").join("");
@@ -416,38 +441,63 @@ window.addEventListener('load', () => {
 		console.log(wx_code)
 		if ((wx_code >= 1 && wx_code <= 3)) {
 			let umbrellaImg = document.createElement('img');
-			umbrellaImg.setAttribute('src', '/Resources/icons8-clouds-200.png');
+			umbrellaImg.setAttribute('src', '/Resources/Clouds.png');
 			umbrellaImg.setAttribute('alt', 'No Umbrella');
 			umbrellaImg.className = 'umbrellaImg';
 			document.getElementById('todayText').appendChild(umbrellaImg)
+
+			let umbrellaYesNo = document.createElement('div')
+			umbrellaOrNot.className = 'umbrellaYesNo'
+			umbrellaYesNo.innerText = 'Inget paraply behövs!'
+			document.getElementById('todayText').appendChild(umbrellaYesNo)
 		}
 		else if ((wx_code == 49 || wx_code == 45) || (wx_code == 10)) {
 			let umbrellaImg = document.createElement('img');
-			umbrellaImg.setAttribute('src', '/Resources/icons8-fog-machine-100.png');
+			umbrellaImg.setAttribute('src', '/Resources/Fog.png');
 			umbrellaImg.setAttribute('alt', 'Fogy No Umbrella');
 			umbrellaImg.className = 'umbrellaImg';
 			document.getElementById('todayText').appendChild(umbrellaImg)
+
+			let umbrellaYesNo = document.createElement('div')
+			umbrellaOrNot.className = 'umbrellaYesNo'
+			umbrellaYesNo.innerText = 'Inget paraply behövs!'
+			document.getElementById('todayText').appendChild(umbrellaYesNo)
 		}
 		else if ((wx_code == 0)){
 			let umbrellaImg = document.createElement('img');
-			umbrellaImg.setAttribute('src', '/Resources/icons8-sun-smiling-100.png');
+			umbrellaImg.setAttribute('src', '/Resources/Sun.png');
 			umbrellaImg.setAttribute('alt', 'No Umbrella');
 			umbrellaImg.className = 'umbrellaImg';
 			document.getElementById('todayText').appendChild(umbrellaImg)
+
+			let umbrellaYesNo = document.createElement('div')
+			umbrellaOrNot.className = 'umbrellaYesNo'
+			umbrellaYesNo.innerText = 'Inget paraply behövs!'
+			document.getElementById('todayText').appendChild(umbrellaYesNo)
 		}
 		else if (wx_code == 38){
 			let umbrellaImg = document.createElement('img');
-			umbrellaImg.setAttribute('src', '/Resources/icons8-windy-weather-100.png');
+			umbrellaImg.setAttribute('src', '/Resources/Windy.png');
 			umbrellaImg.setAttribute('alt', 'Storm No Umbrella');
 			umbrellaImg.className = 'umbrellaImg';
 			document.getElementById('todayText').appendChild(umbrellaImg)
+
+			let umbrellaYesNo = document.createElement('div')
+			umbrellaOrNot.className = 'umbrellaYesNo'
+			umbrellaYesNo.innerText = 'Stanna hemma idag!'
+			document.getElementById('todayText').appendChild(umbrellaYesNo)
 		 }
 		 else{
 			let umbrellaImg = document.createElement('img');
-			umbrellaImg.setAttribute('src', '/Resources/icons8-rain-100.png');
+			umbrellaImg.setAttribute('src', '/Resources/Rain.png');
 			umbrellaImg.setAttribute('alt', 'Yes Umbrella');
 			umbrellaImg.className = 'umbrellaImg';
 			document.getElementById('todayText').appendChild(umbrellaImg)
+
+			let umbrellaYesNo = document.createElement('div')
+			umbrellaOrNot.className = 'umbrellaYesNo'
+			umbrellaYesNo.innerText = 'Ta med paraply!'
+			document.getElementById('todayText').appendChild(umbrellaYesNo)
 		}
 	};
 })
