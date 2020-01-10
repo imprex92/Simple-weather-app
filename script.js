@@ -124,7 +124,10 @@ window.addEventListener('load', () => {
 			alert("Du måste skriva in ett postnummer!");
 		} else if (isNaN(postalCode)){
 			alert('Bara siffror i postnummret är accepterat!')
-		}else{
+		}
+		else if (postalCode.length < 5) {
+		 	alert('Postnummret måste innehålla 5 siffror!');
+		}else {
         console.log(postalCode)
         const editedURL = baseURL + postalCode + apiSettingKey;
         let weatherResponse = await fetch(editedURL);
@@ -439,6 +442,8 @@ window.addEventListener('load', () => {
 	//TODO wx_code1 fattas. Behövs för att visa paraply på morgondagen!
 	function umbrellaOrNot(wx_code) {
 		console.log(wx_code)
+		let startImg = document.getElementById('todayText');
+		startImg.innerHTML = '';
 		if ((wx_code >= 1 && wx_code <= 3)) {
 			let umbrellaImg = document.createElement('img');
 			umbrellaImg.setAttribute('src', '/Resources/Clouds.png');
