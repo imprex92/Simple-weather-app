@@ -1,0 +1,2 @@
+//! API Key: AIzaSyAi4SFgEwyx-Xl6BvDSH5fSL7z4wwU2fWs
+//! API Structure: https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyAi4SFgEwyx-Xl6BvDSH5fSL7z4wwU2fWs
