@@ -6,6 +6,16 @@ switch(wx_code){
 	case 1:		//Partly cloudy skies
 	case 2:		//Cloudy skies
 	case 3:		//Overcast skies
+		let umbrellaImg = document.createElement('img');
+		umbrellaImg.setAttribute('src', '/Resources/Clouds.png');
+		umbrellaImg.setAttribute('alt', 'No Umbrella');
+		umbrellaImg.className = 'umbrellaImg';
+		document.getElementById('todayText').appendChild(umbrellaImg)
+
+		let umbrellaYesNo = document.createElement('div')
+		umbrellaYesNo.className = 'umbrellaYesNo'
+		umbrellaYesNo.innerText = 'Inget paraply behövs!'
+		document.getElementById('todayText').appendChild(umbrellaYesNo)
 	break;
 	//Light Rain
 	case 21:	//Patchy rain possible
